@@ -1,6 +1,6 @@
 [user]
-	name = Shulman Evgeny
-	email = shulman@crosswiselabs.com
+	name = boaz menuhin
+	email = boaz@crosswise.com
 
 [credential]
          #        helper = GIT_CREDENTIAL_HELPER
@@ -29,7 +29,9 @@
 [push]
         # See `git help config` (search for push.default)
         # for more information on different options of the below setting.
-        default = simple
+    default = simple
+[pull]
+    rebase = preserve
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 

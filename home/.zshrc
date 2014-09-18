@@ -45,3 +45,5 @@ if $trace; then
 	# restore stderr to the value saved in FD 3
 	exec 2>&3 3>&-
 fi
+
+export JAVA_HOME="$(/usr/libexec/java_home)"

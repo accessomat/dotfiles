@@ -415,5 +415,6 @@ function! <SID>BufcloseCloseIt()
    endif
 endfunction
 
+set relativenumber
 set nu
 imap jj <esc>

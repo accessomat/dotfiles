@@ -47,3 +47,21 @@ if $trace; then
 fi
 
 export JAVA_HOME="$(/usr/libexec/java_home)"
+
+ GATEWAY_SERVER="gateway.univide.com"
+ INTERNAL_DOMAIN="cwl"
+ function cwl () {
+     target="$1"
+     if [ "${target}" != "" ]; then
+         shift
+         echo "Connecting to ${target}"
+         if ! echo ${target} | grep '\.' &> /dev/null; then
+             target="${target}.${INTERNAL_DOMAIN}"
+         fi
+         ssh -q -C -t ${GATEWAY_SERVER} ssh -q ${target} ${@}
+     else
+         echo "Connecting to gateway"
+         ssh -q -C ${GATEWAY_SERVER}
+     fi
+ }
+
